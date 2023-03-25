@@ -2,6 +2,17 @@
   <label>Username</label>
   <input placeholder="Enter a username" formControlName="username" />
 
+  <div
+    *ngIf="
+      formGroup.controls.username.errors && formGroup.controls.username.touched
+    "
+    class="red"
+  >
+    <p *ngIf="formGroup.controls.username.errors['required']">
+      Username is required
+    </p>
+  </div>
+
   <label>Password</label>
-  <input type="password" formControlName="password"/>
+  <input type="password" formControlName="password" />
 </form>
