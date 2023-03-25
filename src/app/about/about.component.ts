@@ -31,6 +31,22 @@ export class AboutComponent {
   },
   ];
 
+  searchValue: string = '';
+
+  onModelChange(newValue: string): void {
+    console.log('text', newValue);
+    this.searchValue = newValue;
+  }
+
+  onClick(): void {
+    this.users = this.users.filter((user) => {
+      console.log('user', user, this.searchValue);
+      return user.firstName.toLocaleLowerCase().includes(this.searchValue.toLocaleLowerCase());
+    });
+
+   
+  }
+
   onUserChange(user: User): void {
     console.log(user);
   }

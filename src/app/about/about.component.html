@@ -1,4 +1,13 @@
+<div>
+  <input [(ngModel)]="searchValue" />
+  <button (click)="onClick()">Seach</button>
+</div>
+
+My value {{ searchValue }}
 
 <div *ngFor="let user of users">
-    <app-user-details [user]="user" (userChange)="onUserChange($event)"></app-user-details>
+  <app-user-details
+    [user]="user"
+    (userChange)="onUserChange($event)"
+  ></app-user-details>
 </div>

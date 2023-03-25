@@ -1,1 +1,7 @@
-<p>login works!</p>
+<form [formGroup]="formGroup">
+  <label>Username</label>
+  <input placeholder="Enter a username" formControlName="username" />
+
+  <label>Password</label>
+  <input type="password" formControlName="password"/>
+</form>
