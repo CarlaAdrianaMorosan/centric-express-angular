@@ -1,4 +1,4 @@
 
 <div *ngFor="let user of users">
-    <app-user-details [user]="user"></app-user-details>
+    <app-user-details [user]="user" (userChange)="onUserChange($event)"></app-user-details>
 </div>

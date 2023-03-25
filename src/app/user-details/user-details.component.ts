@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../types/user';
 
 @Component({
@@ -8,4 +8,9 @@ import { User } from '../types/user';
 })
 export class UserDetailsComponent {
   @Input() user!: User;
+  @Output() userChange: EventEmitter<User> = new EventEmitter();
+
+  onClick(): void {
+    this.userChange.emit(this.user);
+  }
 }

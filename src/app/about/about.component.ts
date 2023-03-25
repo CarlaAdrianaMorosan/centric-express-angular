@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Users } from '../types/user';
+import { User, Users } from '../types/user';
 
 @Component({
   selector: 'app-about',
@@ -30,4 +30,8 @@ export class AboutComponent {
       avatar: 'https://reqres.in/img/faces/9-image.jpg'
   },
   ];
+
+  onUserChange(user: User): void {
+    console.log(user);
+  }
 }
