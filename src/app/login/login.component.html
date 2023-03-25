@@ -15,4 +15,13 @@
 
   <label>Password</label>
   <input type="password" formControlName="password" />
+
+  <div
+    *ngIf="
+      formGroup.controls.password.errors && formGroup.controls.password.touched
+    "
+    class="red"
+  >
+    <p *ngIf="formGroup.controls.password.errors['minlength']">Weak password</p>
+  </div>
 </form>
