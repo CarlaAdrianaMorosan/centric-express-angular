@@ -5,3 +5,4 @@ export type User = {
   lastName: string;
   avatar: string;
 };
+export type Users = User[];
