@@ -11,3 +11,14 @@ My value {{ searchValue }}
     (userChange)="onUserChange($event)"
   ></app-user-details>
 </div>
+
+<form [formGroup]="formGroup">
+  <label>First name</label>
+  <input formControlName="firstName">
+
+  <label>Last name</label>
+  <input formControlName="lastName">
+
+  <label>Email</label>
+  <input formControlName="email">
+</form>

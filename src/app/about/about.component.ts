@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { User, Users } from '../types/user';
 
 @Component({
@@ -33,6 +34,20 @@ export class AboutComponent {
 
   searchValue: string = '';
 
+  formGroup: FormGroup<{
+    firstName: FormControl,
+    lastName: FormControl,
+    email: FormControl
+  }>;
+
+  constructor() {
+    this.formGroup = new FormGroup({
+      firstName: new FormControl(),
+      lastName: new FormControl(),
+      email: new FormControl()
+    })
+  }
+
   onModelChange(newValue: string): void {
     console.log('text', newValue);
     this.searchValue = newValue;
@@ -49,5 +64,14 @@ export class AboutComponent {
 
   onUserChange(user: User): void {
     console.log(user);
+    this.formGroup.setValue({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email
+    });
+
+    // this.formGroup.patchValue({
+    //   firstName: user.firstName,
+    // });
   }
 }
